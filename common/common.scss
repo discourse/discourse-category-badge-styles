@@ -1,0 +1,86 @@
+.badge-wrapper {
+  --badge-category-padding-v: 0.15em;
+  --badge-category-padding-h: 0.33em;
+
+  .badge-category {
+    &:before {
+      display: none; // hide default box
+    }
+  }
+
+  @if $category-badge-style == 'box' {
+    .badge-category {
+      background: var(--category-badge-color);
+      padding: var(--badge-category-padding-v) var(--badge-category-padding-h);
+      color: var(
+        --category-badge-text-color
+      ) !important; // overrides specific core topic list styles
+
+      .d-icon {
+        color: currentColor;
+      }
+
+      &.badge-subcategory {
+        padding-left: calc(var(--badge-category-padding-h) * 2);
+        &:before {
+          content: '';
+          display: block;
+          width: var(--badge-category-padding-h);
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background: var(--parent-category-badge-color);
+        }
+      }
+    }
+  }
+
+  @if $category-badge-style == 'bar' {
+    + .badge-wrapper {
+      margin-left: calc(var(--badge-category-padding-h) * 2);
+    }
+    .badge-category {
+      border-left: var(--badge-category-padding-h)
+        solid
+        var(--category-badge-color);
+      padding-left: var(--badge-category-padding-h);
+      color: var(--primary-high);
+
+      .d-icon {
+        color: var(--primary-medium);
+      }
+
+      &.badge-subcategory {
+        padding-left: calc(var(--badge-category-padding-h) * 2);
+        &:before {
+          content: '';
+          display: block;
+          width: var(--badge-category-padding-h);
+          margin-left: var(--badge-category-padding-h);
+          height: 100%;
+          position: absolute;
+          left: 0;
+          top: 0;
+          background: var(--parent-category-badge-color);
+        }
+      }
+    }
+  }
+
+  @if $category-badge-style == 'none' {
+    &:before {
+      display: none;
+    }
+  }
+}
+
+// Some special category breadcrumb styles for box
+
+@if $category-badge-style == 'box' {
+  .list-controls .category-breadcrumb .combo-box .combo-box-header {
+    background: var(--category-bg-color);
+    color: var(--category-text-color);
+    border-color: var(--category-bg-color);
+  }
+}

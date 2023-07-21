@@ -1,0 +1,7 @@
+category_badge_style:
+  type: 'enum'
+  default: 'box'
+  choices:
+    - box
+    - bar
+    - none
