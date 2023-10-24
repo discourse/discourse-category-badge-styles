@@ -1,6 +1,6 @@
 category_badge_style:
-  type: 'enum'
-  default: 'box'
+  type: "enum"
+  default: "box"
   choices:
     - box
     - bar
