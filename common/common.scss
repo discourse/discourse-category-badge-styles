@@ -1,12 +1,20 @@
-/* All CSS is intentionally commented out until the relevant core update is made
-
-.badge-wrapper {
+.badge-category__wrapper {
   --badge-category-padding-v: 0.15em;
   --badge-category-padding-h: 0.33em;
 
   .badge-category {
+    display: flex;
+    gap: var(--badge-category-padding-h);
+    // reset core styles
+
     &:before {
-      display: none; // hide default box
+      display: flex;
+      margin-right: 0;
+      height: unset;
+      display: none;
+    }
+    .d-icon {
+      margin: 0;
     }
   }
 
@@ -16,56 +24,54 @@
       padding: var(--badge-category-padding-v) var(--badge-category-padding-h);
       color: var(
         --category-badge-text-color
-      ) !important; // overrides specific core topic list styles
-
+      ) !important; // overrides specific core styles
       .d-icon {
         color: currentColor;
       }
     }
 
-    [class*="badge-subcategory-"] {
+    .--has-parent {
       padding-left: calc(var(--badge-category-padding-h) * 2);
       &:before {
         content: "";
-        display: block;
-        width: var(--badge-category-padding-h);
-        height: 100%;
+        display: flex;
+        background: var(--parent-category-badge-color);
+        width: calc(var(--badge-category-padding-h) * 2);
         position: absolute;
         left: 0;
         top: 0;
-        background: var(--parent-category-badge-color);
+        bottom: 0;
       }
+    }
+
+    // for the category icons component
+    .badge-category__icon {
+      color: var(--category-badge-text-color);
     }
   }
 
   @if $category-badge-style == "bar" {
-    + .badge-wrapper {
-      margin-left: calc(var(--badge-category-padding-h) * 2);
-    }
     .badge-category {
-      border-left: var(--badge-category-padding-h)
-        solid
-        var(--category-badge-color);
-      padding-left: var(--badge-category-padding-h);
       color: var(--primary-high);
-
       .d-icon {
         color: var(--primary-medium);
       }
-    }
-
-    [class*="badge-subcategory-"] {
-      padding-left: calc(var(--badge-category-padding-h) * 2);
       &:before {
         content: "";
-        display: block;
+        display: flex;
         width: var(--badge-category-padding-h);
-        margin-left: var(--badge-category-padding-h);
-        height: 100%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        background: var(--parent-category-badge-color);
+        align-self: stretch;
+        background: var(--category-badge-color);
+      }
+      &.--has-parent {
+        &:before {
+          background: linear-gradient(
+            90deg,
+            var(--parent-category-badge-color) 50%,
+            var(--category-badge-color) 50%
+          );
+          width: calc(var(--badge-category-padding-h) * 2);
+        }
       }
     }
   }
@@ -84,7 +90,7 @@
     background: var(--category-bg-color);
     color: var(--category-text-color);
     border-color: var(--category-bg-color);
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
-
-*/
