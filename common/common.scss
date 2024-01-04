@@ -87,9 +87,9 @@
 
 @if $category-badge-style == "box" {
   .list-controls .category-breadcrumb .combo-box .combo-box-header {
-    background: var(--category-bg-color);
-    color: var(--category-text-color);
-    border-color: var(--category-bg-color);
+    background: var(--category-badge-color);
+    color: var(--category-badge-text-color);
+    border-color: var(--category-badge-color);
     padding-top: 0;
     padding-bottom: 0;
   }
