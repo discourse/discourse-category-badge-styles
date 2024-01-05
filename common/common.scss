@@ -83,7 +83,7 @@
   }
 }
 
-// Some special category breadcrumb styles for box
+// Some special styles for box
 
 @if $category-badge-style == "box" {
   .list-controls .category-breadcrumb .combo-box .combo-box-header {
@@ -92,5 +92,18 @@
     border-color: var(--category-badge-color);
     padding-top: 0;
     padding-bottom: 0;
+  }
+
+  .category-list .subcategories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    .subcategory {
+      margin: 0;
+    }
+  }
+
+  .latest-topic-list-item .main-link .bottom-row {
+    align-items: baseline;
   }
 }
