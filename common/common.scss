@@ -86,6 +86,10 @@
 // Some special styles for box
 
 @if $category-badge-style == "box" {
+  #reply-control .category-input + .mini-tag-chooser {
+    align-self: stretch;
+  }
+
   .list-controls .category-breadcrumb .combo-box .combo-box-header {
     background: var(--category-badge-color);
     color: var(--category-badge-text-color);
