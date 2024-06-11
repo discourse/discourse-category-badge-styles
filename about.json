@@ -1,6 +1,6 @@
 {
-  "about_url": null,
-  "license_url": null,
+  "about_url": "https://meta.discourse.org/t/category-badge-styles/285320",
+  "license_url": "https://github.com/discourse/discourse-category-badge-styles/blob/main/LICENSE",
   "name": "Category Badge Styles",
   "component": true
 }
