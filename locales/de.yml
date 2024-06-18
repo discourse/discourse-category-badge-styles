@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 de:
+  theme_metadata:
+    description: "Kategorie-Abzeichen-Stil: Balken, Box und kein"
