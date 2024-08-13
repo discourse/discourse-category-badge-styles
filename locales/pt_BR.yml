@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 pt_BR:
+  theme_metadata:
+    description: "Estilos de emblema para categorias Barra, Caixa e Nenhum"

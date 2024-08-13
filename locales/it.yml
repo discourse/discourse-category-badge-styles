@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 it:
+  theme_metadata:
+    description: "Stili dei distintivi delle categorie Barra, Casella e Nessuna"

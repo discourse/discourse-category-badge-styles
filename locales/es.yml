@@ -5,3 +5,5 @@
 # https://translate.discourse.org/
 
 es:
+  theme_metadata:
+    description: "Estilos de insignia de categoría Barra, Caja y Ninguno"
