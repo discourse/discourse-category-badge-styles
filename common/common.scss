@@ -5,14 +5,14 @@
   .badge-category {
     display: flex;
     gap: var(--badge-category-padding-h);
-    // reset core styles
 
-    &:before {
-      display: flex;
+    // reset core styles
+    &::before {
       margin-right: 0;
       height: unset;
       display: none;
     }
+
     .d-icon {
       margin: 0;
     }
@@ -25,14 +25,16 @@
       color: var(
         --category-badge-text-color
       ) !important; // overrides specific core styles
+
       .d-icon {
-        color: currentColor;
+        color: currentcolor;
       }
     }
 
     .--has-parent {
       padding-left: calc(var(--badge-category-padding-h) * 2);
-      &:before {
+
+      &::before {
         content: "";
         display: flex;
         background: var(--parent-category-badge-color);
@@ -53,18 +55,21 @@
   @if $category-badge-style == "bar" {
     .badge-category {
       color: var(--primary-high);
+
       .d-icon {
         color: var(--primary-medium);
       }
-      &:before {
+
+      &::before {
         content: "";
         display: flex;
         width: var(--badge-category-padding-h);
         align-self: stretch;
         background: var(--category-badge-color);
       }
+
       &.--has-parent {
-        &:before {
+        &::before {
           background: linear-gradient(
             90deg,
             var(--parent-category-badge-color) 50%,
@@ -77,7 +82,7 @@
   }
 
   @if $category-badge-style == "none" {
-    &:before {
+    &::before {
       display: none;
     }
   }
@@ -102,6 +107,7 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.25em;
+
     .subcategory {
       margin: 0;
     }
