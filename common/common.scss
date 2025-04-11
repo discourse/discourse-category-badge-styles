@@ -7,7 +7,9 @@
     gap: var(--badge-category-padding-h);
 
     // reset core styles
-    &::before {
+    &.--style-square::before,
+    &.--style-icon::before,
+    &.--style-emoji::before {
       margin-right: 0;
       height: unset;
       display: none;
@@ -31,14 +33,14 @@
       }
     }
 
-    .--has-parent {
+    .--style-square.--has-parent {
       padding-left: calc(var(--badge-category-padding-h) * 2);
 
       &::before {
         content: "";
         display: flex;
         background: var(--parent-category-badge-color);
-        width: calc(var(--badge-category-padding-h) * 2);
+        width: var(--badge-category-padding-h);
         position: absolute;
         left: 0;
         top: 0;
@@ -46,9 +48,10 @@
       }
     }
 
-    // for the category icons component
+    // for core and category icons component
+    .--style-icon .d-icon, 
     .badge-category__icon {
-      color: var(--category-badge-text-color);
+      color: var(--category-badge-text-color) !important;
     }
   }
 
@@ -60,7 +63,9 @@
         color: var(--primary-medium);
       }
 
-      &::before {
+      &.--style-square::before,
+      &.--style-icon::before, 
+      &.--style-emoji::before {
         content: "";
         display: flex;
         width: var(--badge-category-padding-h);
@@ -69,7 +74,7 @@
       }
 
       &.--has-parent {
-        &::before {
+        &.--style-square::before {
           background: linear-gradient(
             90deg,
             var(--parent-category-badge-color) 50%,
@@ -83,6 +88,11 @@
 
   @if $category-badge-style == "none" {
     &::before {
+      display: none;
+    }
+    
+    .badge-category.--style-icon .d-icon,
+    .badge-category.--style-emoji .emoji {
       display: none;
     }
   }
