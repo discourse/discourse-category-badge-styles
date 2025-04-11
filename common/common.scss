@@ -49,7 +49,7 @@
     }
 
     // for core and category icons component
-    .--style-icon .d-icon, 
+    .--style-icon .d-icon,
     .badge-category__icon {
       color: var(--category-badge-text-color) !important;
     }
@@ -64,7 +64,7 @@
       }
 
       &.--style-square::before,
-      &.--style-icon::before, 
+      &.--style-icon::before,
       &.--style-emoji::before {
         content: "";
         display: flex;
@@ -90,7 +90,7 @@
     &::before {
       display: none;
     }
-    
+
     .badge-category.--style-icon .d-icon,
     .badge-category.--style-emoji .emoji {
       display: none;
