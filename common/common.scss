@@ -24,12 +24,15 @@
     .badge-category {
       background: var(--category-badge-color);
       padding: var(--badge-category-padding-v) var(--badge-category-padding-h);
-      color: var(
-        --category-badge-text-color
-      ) !important; // overrides specific core styles
 
       .d-icon {
         color: currentcolor;
+      }
+
+      &__name {
+        color: var(
+          --category-badge-text-color
+        ) !important; // overrides specific core styles
       }
     }
 
